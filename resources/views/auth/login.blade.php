@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/skin-blue.min.css') }}">
+    <link href="http://services.webchin.org/web-fonts/web-font?font=UniQAIDAR_SAMi" rel="stylesheet" type="text/css">
 
     @if (app()->getLocale() == 'ar')
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">
@@ -21,6 +22,21 @@
                 font-family: 'Cairo', sans-serif !important;
             }
         </style>
+      
+      @elseif(app()->getLocale() == 'ku')
+
+        <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('dashboard_files/css/AdminLTE-rtl.min.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('dashboard_files/css/bootstrap-rtl.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('dashboard_files/css/rtl.css') }}">
+
+        <style>
+            body, h1, h2, h3, h4, h5, h6 {
+                font-family: "UniQAIDAR_SAMi" !important;
+            }
+        </style>
+
     @else
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome.min.css') }}">
@@ -40,7 +56,7 @@
     </div><!-- end of login lgo -->
 
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">فۆرمی چوونەژوورەوە</p>
 
         <form action="{{ route('login') }}" method="post">
             {{ csrf_field() }}

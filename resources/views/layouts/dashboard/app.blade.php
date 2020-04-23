@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/ionicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dashboard_files/css/skin-blue.min.css') }}">
+    <link href="http://services.webchin.org/web-fonts/web-font?font=UniQAIDAR_SAMi" rel="stylesheet" type="text/css">
+
 
     @if (app()->getLocale() == 'ar')
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">
@@ -23,6 +25,24 @@
                 font-family: 'Cairo', sans-serif !important;
             }
         </style>
+      
+
+      @elseif(app()->getLocale() == 'ku')
+
+      <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome-rtl.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('dashboard_files/css/AdminLTE-rtl.min.css') }}">
+      <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
+      <link rel="stylesheet" href="{{ asset('dashboard_files/css/bootstrap-rtl.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('dashboard_files/css/rtl.css') }}">
+
+      <style>
+          body, h1, h2, h3, h4, h5, h6 {
+              font-family: "UniQAIDAR_SAMi" !important;
+          }
+      </style>
+
+
+
     @else
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
         <link rel="stylesheet" href="{{ asset('dashboard_files/css/font-awesome.min.css') }}">
@@ -108,7 +128,7 @@
                 <ul class="nav navbar-nav">
 
                     <!-- Messages: style can be found in dropdown.less-->
-                    <li class="dropdown messages-menu">
+                    {{-- <li class="dropdown messages-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
                             <span class="label label-success">4</span>
@@ -138,19 +158,19 @@
                                 <a href="#">See All Messages</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
                     {{--<!-- Notifications: style can be found in dropdown.less -->--}}
-                    <li class="dropdown notifications-menu">
+                    {{-- <li class="dropdown notifications-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
                             <span class="label label-warning">10</span>
                         </a>
                         <ul class="dropdown-menu">
                             <li class="header">You have 10 notifications</li>
-                            <li>
+                            <li> --}}
                                 {{--<!-- inner menu: contains the actual data -->--}}
-                                <ul class="menu">
+                                {{-- <ul class="menu">
                                     <li>
                                         <a href="#">
                                             <i class="fa fa-users text-aqua"></i> 5 new members joined today
@@ -162,7 +182,7 @@
                                 <a href="#">View all</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> --}}
 
                     {{--<!-- Tasks: style can be found in dropdown.less -->--}}
                     <li class="dropdown tasks-menu">
@@ -187,18 +207,19 @@
                     <li class="dropdown user user-menu">
 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('dashboard_files/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
+                            <img src="{{ asset('dashboard_files/img/avatar04.png') }}" class="user-image" alt="User Image">
                             <span class="hidden-xs">{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</span>
                         </a>
                         <ul class="dropdown-menu">
 
                             {{--<!-- User image -->--}}
                             <li class="user-header">
-                                <img src="{{ asset('dashboard_files/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                <img src="{{ asset('dashboard_files/img/avatar04.png') }}" class="img-circle" alt="User Image">
 
                                 <p>
+                                   
                                     {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
-                                    <small>Member since 2 days</small>
+                                <small>{{auth()->user()->created_at->format('Y-m-d')}}</small>
                                 </p>
                             </li>
 
@@ -230,10 +251,10 @@
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.4.0
+            <b>Version</b> 1.2
         </div>
-        <strong>Copyright &copy; 2014-2016
-            <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+        <strong>Copyright &copy; 2020-2021
+            <a href="#">’Mohammed_Dev</a>.</strong> All rights
         reserved.
     </footer>
 
